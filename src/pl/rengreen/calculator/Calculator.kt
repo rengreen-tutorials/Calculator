@@ -29,7 +29,15 @@ fun main(args: Array<String>) {
     }
 
     println("To jest kalkulator")
-    do {
+    while (true) {
         displayOptions()
-    } while (false)
+        val operation = Operation.fromString(readLine())
+        when {
+            operation.isMathOperation() -> {
+            // TODO
+            }
+            operation == Operation.EXIT -> System.exit(0)
+            else -> println("Wybrałeś znak, którego nie ma na liście")
+        }
+    }
 }
